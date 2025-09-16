@@ -1,4 +1,4 @@
-# Raspberry Pi GPIO Energy Current Simulation
+# Raspberry Pi GPIO Energy Current Simulation (WIP)
 
 ## Project Overview
 
@@ -100,10 +100,6 @@ npm run server
 - Cloud-based simulation sharing
 - Advanced thermal modeling
 - PCB layout integration
-
-## Contributing
-
-Please read CONTRIBUTING.md for development guidelines and submission process.
 
 ## License
 
