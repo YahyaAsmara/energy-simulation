@@ -1,106 +1,60 @@
-# Raspberry Pi GPIO Energy Current Simulation (WIP)
+# Raspberry Pi GPIO Energy Simulation (WIP)
 
-## Project Overview
+> ⚠️ **Project Status**: Work in progress - conceptual project not yet implemented.
 
-This project simulates electrical energy flow and current behavior between hardware GPIO pins and Raspberry Pi systems. It provides real-time visualization of voltage, current, and power consumption patterns with interactive circuit design capabilities.
+## Overview
 
-## Features
+Simulates electrical energy flow and current behavior between hardware GPIO pins and Raspberry Pi systems with real-time visualization and interactive circuit design.
 
-- **Real-time GPIO simulation**: Virtual representation of Raspberry Pi GPIO pins
-- **Current flow visualization**: Dynamic display of electrical current paths
-- **Interactive circuit builder**: Drag-and-drop interface for creating circuits
-- **Power consumption monitoring**: Real-time energy usage calculations
-- **Hardware interfacing**: Connect to actual Raspberry Pi GPIO (when available)
-- **Data logging**: Historical power consumption data with export capabilities
-- **3D visualization**: Three.js-powered 3D circuit representation
+## Planned Features
 
-## Technologies Used
+- **GPIO Simulation**: Virtual Raspberry Pi GPIO pin representation
+- **Circuit Builder**: Drag-and-drop interface for creating circuits
+- **Real-time Visualization**: Current flow, voltage, and power consumption monitoring
+- **3D Circuit View**: Three.js-powered circuit representation
+- **Hardware Integration**: Connect to actual Raspberry Pi GPIO (optional)
+- **Data Export**: Historical power consumption analysis
 
-### Frontend
-- **React 18** - Main UI framework
-- **Three.js** - 3D visualization and circuit rendering
-- **D3.js** - Data visualization for graphs and charts
-- **Tailwind CSS** - Responsive styling
-- **Recharts** - Chart components for data analysis
-- **Lucide React** - Icon components
+## Technologies (Proposed)
 
-### Backend (Node.js/Express)
-- **Node.js** - Runtime environment
-- **Express.js** - Web server framework
-- **Socket.io** - Real-time bidirectional communication
-- **SQLite** - Local database for simulation data
-- **Johnny-Five** - JavaScript robotics and IoT platform
-- **Raspi-io** - Raspberry Pi I/O plugin for Johnny-Five
+**Frontend**: React, Three.js (3D visualization), D3.js (charts), Tailwind CSS
+**Backend**: Node.js, Express, Socket.io, SQLite
+**Hardware**: Johnny-Five, Raspi-io, RPi.GPIO
+**Processing**: WebAssembly for calculations, Web Workers
 
-### Hardware Integration
-- **GPIO simulation library** - Virtual GPIO pin management
-- **PWM signal generation** - Pulse width modulation simulation
-- **ADC/DAC emulation** - Analog-to-digital conversion simulation
-- **I2C/SPI protocol support** - Communication protocol simulation
+## Architecture Concept
 
-### Data Processing
-- **WebAssembly (WASM)** - High-performance calculations
-- **Web Workers** - Background processing for complex simulations
-- **IndexedDB** - Client-side data storage
-- **CSV export** - Data analysis capabilities
-
-## Installation
-
-### Prerequisites
-- Node.js 18+
-- Python 3.8+ (for hardware interfacing)
-- Raspberry Pi OS (for actual hardware)
-
-### Setup
-```bash
-# Clone repository
-git clone https://github.com/your-org/pi-energy-simulation.git
-cd pi-energy-simulation
-
-# Install dependencies
-npm install
-pip install RPi.GPIO gpiozero
-
-# Start development server
-npm run dev
-
-# Start backend simulation server
-npm run server
+```
+GPIO Pins ──┐
+            ├── Simulation Engine ── Real-time Data ── 3D Visualization
+Circuit  ───┤     (Ohm's Law,                    │
+Design   ───┘     Kirchhoff's Laws)              └── Data Export
 ```
 
-## Architecture
+## Key Algorithms (Planned)
 
-### System Components
-1. **Frontend React App**: User interface and real-time visualization
-2. **Simulation Engine**: Core electrical simulation algorithms
-3. **GPIO Interface**: Hardware abstraction layer
-4. **Data Pipeline**: Real-time data processing and storage
-5. **3D Renderer**: Three.js-based circuit visualization
+- **Ohm's Law**: V = I × R calculations
+- **Kirchhoff's Laws**: Current and voltage analysis  
+- **Power Dissipation**: P = V × I modeling
+- **Signal Processing**: Digital/analog signal simulation
 
-### Key Algorithms
-- **Ohm's Law calculations**: V = I × R
-- **Kirchhoff's circuit laws**: Current and voltage analysis
-- **Power dissipation modeling**: P = V × I
-- **Thermal simulation**: Heat generation and dissipation
-- **Signal processing**: Digital and analog signal analysis
+## Quick Start (Conceptual)
 
-## Usage
+```bash
+git clone https://github.com/your-org/pi-energy-simulation.git
+cd pi-energy-simulation
+npm install
+npm run dev    # Frontend
+npm run server # Backend simulation
+```
 
-1. **Design Circuit**: Use the drag-and-drop interface to create circuits
-2. **Configure Parameters**: Set voltage, resistance, and component values
-3. **Run Simulation**: Execute real-time current flow simulation
-4. **Monitor Data**: View live graphs of voltage, current, and power
-5. **Export Results**: Download simulation data for analysis
+## Use Cases
 
-## Future Enhancements
+- Educational tool for learning electronics
+- Circuit prototyping before hardware implementation  
+- Power consumption analysis and optimization
+- GPIO pin behavior simulation and testing
 
-- Machine learning for predictive power consumption
-- Multi-board simulation support
-- IoT device integration
-- Cloud-based simulation sharing
-- Advanced thermal modeling
-- PCB layout integration
+---
 
-## License
-
-MIT License - see LICENSE.md for details.
+*This tool would help developers and students understand electrical behavior in Raspberry Pi projects before working with actual hardware.*
